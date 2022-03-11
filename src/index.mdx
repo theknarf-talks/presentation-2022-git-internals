@@ -1,3 +1,5 @@
+import fig1 from './fig1.png';
+import { Image } from 'mdx-deck'
 
 ```
 Presentasjon1.pptx
@@ -7,22 +9,191 @@ Presentasjon-2-Final.pptx
 Presentasjon-final-final.pptx
 ```
 
----
+<Steps>
 
 # Version control
 
-How does version control work?
+</Steps>
 
 ---
 
 ```
-Presentasjon1.pptx
-Presentasjon-v1.1.pptx
+Presentasjon-1.pptx
 Presentasjon-2.pptx
-Presentasjon-2-Final.pptx
-Presentasjon-final-final.pptx
+Presentasjon-3.pptx
+Presentasjon-4.pptx
+Presentasjon-5.pptx
 ```
 
+<Steps>
+
+# Unified version numbers
+
+</Steps>
+
+
 ---
+
+
+```
+.versions/Presentasjon-1.pptx
+.versions/Presentasjon-2.pptx
+.versions/Presentasjon-3.pptx
+.versions/Presentasjon-4.pptx
+.versions/Presentasjon-5.pptx
+Presentasjon.pptx
+```
+
+<Steps>
+
+# Keep versions in hidden folder
+
+</Steps>
+
+
+---
+
+<Steps>
+
+# Hashing
+
+Takes a file and turns into a short unique number
+
+Different algoritms like MD5 and SHA256
+
+</Steps>
+
+---
+
+```
+.versions/owurnf1241
+.versions/few424fw14
+.versions/ab321de13d
+Presentasjon.pptx
+```
+
+<Steps>
+
+This removes duplicates
+
+But now we lose version numbers?
+
+...and file names
+
+</Steps>
+
+---
+
+<Steps>
+
+# Trees
+
+A tree is a text files that map file names to version numbers
+
+```
+owurnf1241 Presentasjon.pptx
+few424fw14 Presentasjon.pptx
+ab321de13d Presentasjon.pptx
+```
+
+</Steps>
+
+---
+
+
+```
+.versions/objects/owurnf1241
+.versions/objects/few424fw14
+.versions/objects/ab321de13d
+.version/tree.txt
+Presentasjon.pptx
+```
+
+<Steps>
+
+But we're still missing version numbers
+
+What hash comes before the other?
+
+And only one tree file?
+
+</Steps>
+
+---
+
+
+```
+.versions/objects/owurnf1241
+.versions/objects/few424fw14
+.versions/objects/ab321de13d
+.version/trees/1
+.version/trees/2
+.version/trees/3
+Presentasjon.pptx
+```
+
+<Steps>
+
+What about duplicate trees?
+
+Lets also save trees as hashes!
+
+</Steps>
+
+---
+
+```
+.versions/objects/owurnf1241
+.versions/objects/few424fw14
+.versions/objects/ab321de13d
+.version/trees/be42ade3
+.version/trees/de142ad3
+.version/trees/beade323
+Presentasjon.pptx
+```
+
+<Steps>
+
+We lost versions numbers
+
+Can we do version numbers better?
+
+</Steps>
+
+---
+
+# Commits
+
+```
+Description
+
+Date: 11. Mars 2022
+Tree: be42ade3
+Previus commit:
+```
+
+
+<Steps>
+
+A commit is a "linked list" where each commit points to:
+
+- The hash of a tree
+
+- The hash of the previus commit
+
+</Steps>
+
+---
+
+# Commits
+
+<Image src={fig1} style={{
+	display: 'flex',
+	'background-size': 'contain',
+	alignItems: 'center',
+	justifyContent: 'center',
+	color: 'white',
+	backgroundColor: 'black',
+	}} />
 
 
