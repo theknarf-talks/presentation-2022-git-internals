@@ -102,9 +102,9 @@ ab321de13d Presentasjon.pptx
 
 
 ```
-.versions/objects/owurnf1241
-.versions/objects/few424fw14
-.versions/objects/ab321de13d
+.versions/blobs/owurnf1241
+.versions/blobs/few424fw14
+.versions/blobs/ab321de13d
 .version/tree.txt
 Presentasjon.pptx
 ```
@@ -123,12 +123,12 @@ And only one tree file?
 
 
 ```
-.versions/objects/owurnf1241
-.versions/objects/few424fw14
-.versions/objects/ab321de13d
-.version/trees/1
-.version/trees/2
-.version/trees/3
+.versions/blobs/owurnf1241
+.versions/blobs/few424fw14
+.versions/blobs/ab321de13d
+.versions/trees/1
+.versions/trees/2
+.versions/trees/3
 Presentasjon.pptx
 ```
 
@@ -143,12 +143,12 @@ Lets also save trees as hashes!
 ---
 
 ```
-.versions/objects/owurnf1241
-.versions/objects/few424fw14
-.versions/objects/ab321de13d
-.version/trees/be42ade3
-.version/trees/de142ad3
-.version/trees/beade323
+.versions/blobs/owurnf1241
+.versions/blobs/few424fw14
+.versions/blobs/ab321de13d
+.versions/trees/be42ade3
+.versions/trees/de142ad3
+.versions/trees/beade323
 Presentasjon.pptx
 ```
 
@@ -196,4 +196,86 @@ A commit is a "linked list" where each commit points to:
 	backgroundColor: 'black',
 	}} />
 
+---
 
+Git uses a folder called `.git` not `.versions` like in our example
+
+
+```
+.git/blobs/owurnf1241
+.git/blobs/few424fw14
+.git/blobs/ab321de13d
+.git/trees/be42ade3
+.git/trees/de142ad3
+.git/trees/beade323
+.git/commits/eb23ae3
+.git/commits/bede123
+Presentasjon.pptx
+```
+
+---
+
+They also keeps all `blobs`, `trees` and `commits` in one folder.
+
+
+```
+.git/objects/owurnf1241
+.git/objects/few424fw14
+.git/objects/ab321de13d
+.git/objects/be42ade3
+.git/objects/de142ad3
+.git/objects/beade323
+.git/objects/eb23ae3
+.git/objects/bede123
+Presentasjon.pptx
+```
+
+<Steps>
+
+But wait, how do we find the newest commit?
+
+</Steps>
+
+---
+
+At last
+
+# Branches
+
+<Steps>
+
+A branch have two parts:
+
+- A name
+
+- The hash of the newest commit
+
+Thats it.
+
+</Steps>
+
+---
+
+
+```
+.git/objects/owurnf1241
+.git/objects/few424fw14
+.git/objects/ab321de13d
+.git/objects/be42ade3
+.git/objects/de142ad3
+.git/objects/beade323
+.git/objects/eb23ae3
+.git/objects/bede123
+
+.git/refs/heads/main
+
+Presentasjon.pptx
+```
+
+<Steps>
+
+Branches is internally called `refs` in Git.
+
+And now we have reinvented Git.
+
+</Steps>
